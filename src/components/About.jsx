@@ -22,9 +22,8 @@ export default function About() {
         <div className="flex flex-col justify-between h-full min-h-[420px] reveal">
           <h2 className="display text-[46px] md:text-[62px] xl:text-[76px]">Hey!</h2>
           <p className="text-[22px] font-semibold leading-[1.4] mt-auto pt-16">
-            I'm <span className="font-semibold">Fahad Qureshi</span>, a
-            machine learning engineer who builds AI systems end to end,
-            from training the model to shipping the API that serves it.
+            I'm <span className="font-semibold">Fahad Qureshi</span>.
+            Engineering software. Empowering it with AI.
           </p>
         </div>
 
@@ -53,22 +52,18 @@ export default function About() {
         {/* Right column */}
         <div className="flex flex-col gap-6 md:pt-24 reveal">
           <p className="text-[18px] text-ink/80">
-            Most ML work stops at a notebook and an accuracy score. Mine
-            doesn't. I build NLP, RAG, recommendation, and predictive
-            analytics systems the way production software gets built: a
-            model behind a clean REST API, an interface that consumes it,
-            and containers anyone can run. My everyday stack is Python,
-            Scikit-learn, TensorFlow, LangChain, and FastAPI.
+            I build AI systems that go beyond predictions—systems designed
+            to make decisions, integrate into real-world workflows, and
+            deliver reliable results in production. From predictive models
+            to intelligent applications, I focus on building scalable,
+            maintainable solutions that solve real business problems.
           </p>
           <p className="text-[18px] text-ink/80">
-            I'm studying Software Engineering at The Islamia University of
-            Bahawalpur, and I spent nearly two years as a Technical
-            Recruiter at Kinetic Hire, screening and assessing engineers
-            for technical roles. Seeing hiring from the other side taught
-            me what teams actually need: clear thinking, honest limits,
-            and work that holds up outside a demo. Right now I'm focused
-            on retrieval-augmented generation, building assistants that
-            answer from real documents and say so when they don't know.
+            My work extends beyond AI models. I build end-to-end software
+            products, connecting intelligent backends with intuitive
+            interfaces, robust APIs, and reliable databases. I believe great
+            software does more than work—it solves meaningful problems,
+            supports business goals, and delivers lasting value.
           </p>
           <ArrowLink href="#contact">Get in touch</ArrowLink>
         </div>

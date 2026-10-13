@@ -5,15 +5,15 @@ const services = [
   },
   {
     title: 'Natural Language Processing',
-    tags: ['Intent Classification', 'Sentiment Analysis', 'Text Preprocessing', 'TF-IDF'],
+    tags: ['Sentiment Analysis', 'Text Preprocessing', 'TF-IDF'],
   },
   {
     title: 'Recommendation Systems',
-    tags: ['Content-Based Filtering', 'Resume-to-Job Matching', 'Cosine Similarity'],
+    tags: ['Content-Based Filtering'],
   },
   {
     title: 'Machine Learning & Predictive Analytics',
-    tags: ['Churn & Risk Prediction', 'XGBoost', 'Imbalanced Data', 'Cross-Validation'],
+    tags: ['Classification & Prediction', 'Regression Analysis', 'Unsupervised Learning', 'Model Evaluation'],
   },
   {
     title: 'Deep Learning',

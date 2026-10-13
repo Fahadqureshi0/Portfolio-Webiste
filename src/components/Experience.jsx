@@ -18,11 +18,6 @@ const groups = [
       {
         title: 'BS Software Engineering',
         org: 'The Islamia University of Bahawalpur',
-        period: '2023 – Present',
-      },
-      {
-        title: 'FSc (Intermediate, Computer Science)',
-        org: '781 / 1100',
       },
     ],
   },
