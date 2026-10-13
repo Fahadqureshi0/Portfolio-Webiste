@@ -22,8 +22,9 @@ export default function About() {
         <div className="flex flex-col justify-between h-full min-h-[420px] reveal">
           <h2 className="display text-[46px] md:text-[62px] xl:text-[76px]">Hey!</h2>
           <p className="text-[22px] font-semibold leading-[1.4] mt-auto pt-16">
-            I'm <span className="font-semibold">Fahad Qureshi</span>.
-            Engineering software. Empowering it with AI.
+            I'm <span className="font-semibold">Fahad Qureshi</span>, a
+            machine learning engineer who builds AI systems end to end,
+            from training the model to shipping the API that serves it.
           </p>
         </div>
 
