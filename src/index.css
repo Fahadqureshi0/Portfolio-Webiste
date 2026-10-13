@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #faf7f3;
+  --color-ink: #111111;
+  --color-muted: #8a8782;
+  --font-sans: "Archivo", "Inter", sans-serif;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  /* Template body preset: 18px / 400 / -0.04em / 1.4 */
+  letter-spacing: -0.04em;
+  line-height: 1.4;
+}
+
+::selection {
+  background: #111111;
+  color: #faf7f3;
+}
+
+/* Subtle paper-grain texture like the template */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Scroll-reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Template heading preset: -0.02em tracking, line-height 1, weight 600.
+   Lives in the components layer so per-element utilities can override it. */
+@layer components {
+  .display {
+    letter-spacing: -0.02em;
+    line-height: 1;
+    font-weight: 600;
+  }
+}
