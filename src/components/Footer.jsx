@@ -51,6 +51,14 @@ export default function Footer() {
             >
               GitHub ↗
             </a>
+            <a
+              href="https://www.linkedin.com/in/fahad-qureshi-b85664444/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-cream/70 hover:text-cream transition-colors"
+            >
+              LinkedIn ↗
+            </a>
           </div>
         </div>
       </div>
