@@ -2,6 +2,24 @@
 // at github.com/Fahadqureshi0 — numbers and claims are as reported there.
 export const projects = [
   {
+    slug: 'company-research-agent',
+    name: 'Company Research Agent',
+    subtitle: 'Tool-Calling AI Agent, FastAPI Backend, React Frontend',
+    headline: 'Name a company, get a researched PDF report.',
+    stat: '3',
+    statLabel: 'tools: web search, page reader, market data',
+    tech: ['Python', 'LangChain', 'Groq', 'Tavily', 'FastAPI', 'React', 'Vite', 'ReportLab'],
+    gradient: 'from-cyan-400 via-blue-600 to-violet-700',
+    github: 'https://github.com/Fahadqureshi0/Company-Research-Agent',
+    description:
+      'Researching a company means jumping between search results, websites, and stock pages, then stitching it all together by hand. I built an AI agent that does that loop on its own: you enter a company name, and it searches the web, reads pages, pulls market data, and turns what it finds into a downloadable PDF covering what the company does, its products, business model, leadership, competitors, valuation, recent news, and risks. The frontend is live on Vercel; the FastAPI backend runs locally for now, so generating a report needs the backend running.',
+    highlights: [
+      'A real tool-calling loop. The LLM can’t browse the web or fetch stock data by itself, so it is given three tools: web search (Tavily), a page reader (requests + BeautifulSoup), and market data (yfinance). At each step the model chooses a tool, the code runs it, and the result goes back to the model until it has enough to write its research notes. The tool budget is capped, so the agent can’t loop forever.',
+      'Reports are structured, and the sources are checked. The notes are converted into a Pydantic CompanyReport schema, then rendered to PDF with ReportLab, including a key-financials table and clickable sources. Source URLs are validated against what the tools actually returned, so the agent can’t invent links.',
+      'The backend starts each report as a background job and returns a job ID immediately, with endpoints to check status, cancel, and download. The React + Vite frontend polls the job and shows each real agent step in a live activity feed, with a cancel button, saved report history, and a light/dark animated UI built with Framer Motion.',
+    ],
+  },
+  {
     slug: 'hr-assistant-rag-chatbot',
     name: 'HR Assistant RAG Chatbot',
     subtitle: 'Retrieval-Augmented Generation, FastAPI Backend',
