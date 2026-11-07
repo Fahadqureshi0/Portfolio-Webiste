@@ -16,10 +16,6 @@ const services = [
     tags: ['Classification & Prediction', 'Regression Analysis', 'Unsupervised Learning', 'Model Evaluation'],
   },
   {
-    title: 'Deep Learning',
-    tags: ['TensorFlow / Keras', 'LSTMs', 'CNNs & Transfer Learning'],
-  },
-  {
     title: 'Model Deployment & APIs',
     tags: ['FastAPI', 'REST API Design', 'Docker & Compose', 'Streamlit Cloud'],
   },
