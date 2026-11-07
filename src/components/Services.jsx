@@ -4,12 +4,8 @@ const services = [
     tags: ['LangChain', 'FAISS Vector Search', 'Grounded Answers with Citations', 'Groq'],
   },
   {
-    title: 'Natural Language Processing',
-    tags: ['Sentiment Analysis', 'Text Preprocessing', 'TF-IDF'],
-  },
-  {
-    title: 'Recommendation Systems',
-    tags: ['Content-Based Filtering'],
+    title: 'NLP & Recommendation Systems',
+    tags: ['Sentiment Analysis', 'Text Preprocessing', 'TF-IDF', 'Content-Based Filtering'],
   },
   {
     title: 'Machine Learning & Predictive Analytics',
