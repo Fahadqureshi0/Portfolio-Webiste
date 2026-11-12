@@ -1,5 +1,7 @@
 // All copy is sourced from Fahad's resume and the repositories' own READMEs
 // at github.com/Fahadqureshi0 — numbers and claims are as reported there.
+// All copy is sourced from Fahad's resume and the repositories' own READMEs
+// at github.com/Fahadqureshi0 — numbers and claims are as reported there.
 export const projects = [
   {
     slug: 'company-research-agent',
@@ -35,6 +37,25 @@ export const projects = [
       'Grounding is enforced, not hoped for. The prompt restricts the Groq LLM to the retrieved excerpts and requires a fixed “not found” reply when the answer isn’t there, so the code can detect unanswered questions reliably. Those are logged and exposed through a /unanswered endpoint, which turns the chatbot’s gaps into a list of policies HR needs to write or clarify.',
       'Every chunk carries metadata (company, country, and policy type), which powers both filtering and source labels. A country filter returns that country’s rules plus the global ones, and each answer comes back with its sources: policy title, URL, country, and a snippet. Follow-ups like “and for adoption?” are rewritten into standalone questions before retrieval.',
       'Embeddings run locally (all-MiniLM-L6-v2), since Groq serves chat models only, and the FAISS index is built once and persisted to disk so restarts skip re-downloading and re-embedding. The FastAPI service is stateless: the client owns the chat history and sends it with each request, which keeps the server simple to scale.',
+    ],
+  },
+  {
+    slug: 'edith-ai-customer-support-agent',
+    name: 'Edith: AI Customer Support Agent',
+    subtitle: 'RAG + Tool Calling, FastAPI Backend, React Frontend',
+    headline: 'Answers from real help articles, and knows when to hand off.',
+    stat: '3',
+    statLabel: 'tools: knowledge search, subscription lookup, ticket creation',
+    tech: ['Python', 'LangChain', 'Groq', 'ChromaDB', 'FastAPI', 'Pydantic', 'React', 'Vite', 'Framer Motion'],
+    gradient: 'from-teal-300 via-sky-500 to-blue-700',
+    github: 'https://github.com/Fahadqureshi0/Customer-Support-Agent',
+    demo: 'https://customer-support-agent-7pca.vercel.app/',
+    description:
+      'Support teams answer the same questions all day, and a bot that makes things up does more harm than good. Edith is a customer support agent that answers from real help-center articles, remembers the conversation, looks up customer accounts, opens support tickets, and hands the conversation to a human when it can’t help. It is a full-stack project: a Python backend (FastAPI, LangChain, Groq, ChromaDB) and a React frontend with animated chat, source links, and light/dark themes. The frontend runs on Vercel and the backend on Render’s free tier, so the first message after a quiet period can take up to a minute while the server wakes up.',
+    highlights: [
+      'Retrieval-augmented answers. Help-center articles are cleaned, chunked, and stored in a persistent ChromaDB vector store, and every answer links the articles it used, so customers can check the source.',
+      'Tool calling decides the next step. The model chooses when to search the knowledge base, check a customer’s subscription, or create a ticket. Every reply is validated with Pydantic and returns an answer, a category, and a needs_human flag. When Edith can’t find an answer, or the customer is upset or asks for a person, she opens a ticket and flags the conversation for a human.',
+      'Each session_id keeps its own recent chat history, and the React + Vite frontend (Framer Motion) adds source links, a typing indicator, a live details panel, and dark mode. The backend is also containerized with Docker.',
     ],
   },
   {
@@ -109,25 +130,6 @@ export const projects = [
     highlights: [
       'A Scikit-learn classification model learns churn signals from historical subscription and service-usage data.',
       'The trained model is served through a FastAPI REST endpoint, so downstream applications such as a CRM or a retention dashboard can request a churn-risk prediction in real time instead of waiting on a batch report.',
-    ],
-  },
-  {
-    slug: 'multiple-disease-prediction-system',
-    name: 'Multiple Disease Prediction System',
-    subtitle: 'Three Models, One Deployed App',
-    headline: 'Diabetes, heart disease, and Parkinson’s in one app.',
-    stat: '3',
-    statLabel: 'trained models in production',
-    tech: ['Python', 'Scikit-learn', 'Logistic Regression', 'SVM', 'Pandas', 'Streamlit'],
-    gradient: 'from-rose-300 via-pink-500 to-fuchsia-600',
-    github: 'https://github.com/Fahadqureshi0/Multiple-Disease-Prediction-System',
-    demo: 'https://multiple-disease-prediction-system-czc8m4xzgnqgxczmgi6nqe.streamlit.app/',
-    description:
-      'A web application that brings three separately trained diagnostic models together behind a single interface. A user enters medical measurements and gets an instant prediction for diabetes, heart disease, or Parkinson’s disease.',
-    highlights: [
-      'Each condition gets the model that suited its data: Logistic Regression for diabetes, and Support Vector Machines for heart disease and Parkinson’s. Each is trained on its own dataset and serialized for deployment.',
-      'Pre-trained models are loaded at startup, so predictions are instant. A sidebar menu (streamlit-option-menu) switches between the three predictors.',
-      'Deployed on Streamlit Community Cloud. It builds on my earlier standalone diabetes, heart disease, and Parkinson’s projects, including K-fold cross-validation experiments comparing Logistic Regression, SVM, Random Forest, and KNN.',
     ],
   },
 ]
